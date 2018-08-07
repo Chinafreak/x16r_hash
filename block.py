@@ -21,12 +21,12 @@ while True:
   hashbin = x16r_hash.getPoWHash(binascii.unhexlify(complete_header))[::-1]
 
   if hashbin < targetbin:
-     print 'block ' + str(binascii.hexlify(hashbin))
-     print 'nonce was ' + str(nonce)
+     print ('block ' + str(binascii.hexlify(hashbin)))
+     print ('nonce was ' + str(nonce))
      sys.exit(0)
 
   if (nonce % 4096 == 0):
-     print str(nonce)
+     print (str(nonce))
 
   nonce += 1
 
