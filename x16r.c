@@ -58,7 +58,11 @@ static void getAlgoString(const uint8_t* prevblock, char *output)
     *sptr = '\0';
 }
 
+#ifdef _WIN32
 void x16r_hash(char* input, char* output)
+#else
+void x16r_hash(void* input, void* output)
+#endif
 {
     int i;
     uint32_t hash[64/4];
